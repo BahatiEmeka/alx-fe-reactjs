@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Header /> {/* Header Component */}
-      <MainContent /> {/* MainContent Component */}
-      <Footer /> {/* Footer Component */}
+      <Header />         {/* Renders Header Component */}
+      <MainContent />    {/* Renders MainContent Component */}
+      <Footer />         {/* Renders Footer Component */}
 
       <div>
         <a href="https://vite.dev" target="_blank">
@@ -26,7 +26,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       
-      <WelcomeMessage /> {/* WelcomeMessage Component */}
+      <WelcomeMessage /> {/* Renders WelcomeMessage Component */}
       
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
