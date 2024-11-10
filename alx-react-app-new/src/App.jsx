@@ -7,6 +7,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';  // Import UserProfile component
+import Counter from './components/Counter';          // Import the Counter component
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,9 +41,13 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      
+      {/* Render the new Counter component */}
+      <Counter />
     </>
   );
 }
