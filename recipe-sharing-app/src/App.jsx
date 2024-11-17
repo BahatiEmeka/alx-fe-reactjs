@@ -1,23 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// src/App.jsx
+import React, { useEffect } from 'react';
+import './App.css';
+import { useRecipeStore } from './components/recipeStore';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
-import RecipeDetails from './components/RecipeDetails';
-import SearchBar from './components/SearchBar';
-import './App.css';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function App() {
+  const generateRecommendations = useRecipeStore((state) => state.generateRecommendations);
+
+  // Generate recommendations when the app is loaded or when favorites change
+  useEffect(() => {
+    generateRecommendations();
+  }, []);
+
   return (
-    <Router>
-      <div>
-        <h1>Recipe Sharing App</h1>
-        <AddRecipeForm />
-        <SearchBar /> {/* Add the SearchBar component here */}
-        <Routes>
-          <Route path="/" element={<RecipeList />} />
-          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <h1>Recipe Sharing Application</h1>
+      <AddRecipeForm />
+      <RecipeList />
+      <FavoritesList />
+      <RecommendationsList />
+    </div>
   );
 }
 
