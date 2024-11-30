@@ -1,8 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"], // Add paths to your template files
+module.exports = {
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"], // Specify files to scan for unused styles
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {}, // Customize the theme
   },
-  plugins: [],
-}
+  variants: {
+    extend: {}, // Extend variants for utilities
+  },
+  plugins: [], // Add plugins if needed
+};
