@@ -1,14 +1,17 @@
 import React from "react";
-import HomePage from "./components/HomePage"; // Importing the HomePage component
-import "./App.css"; // Retaining the global styles
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import RecipeDetail from "./components/RecipeDetail";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      {/* Render the HomePage Component */}
-      <HomePage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipeDetail />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
