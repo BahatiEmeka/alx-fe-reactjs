@@ -28,10 +28,10 @@ const AddRecipeForm = () => {
 
   // Handle input changes
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; // Extract name and value from the event target
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value, // Update the appropriate field
     });
   };
 
@@ -61,7 +61,7 @@ const AddRecipeForm = () => {
             id="title"
             name="title"
             value={formData.title}
-            onChange={handleChange}
+            onChange={handleChange} // Correct use of target.value
             className={`mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-green-300 ${
               errors.title ? "border-red-500" : "border-gray-300"
             }`}
@@ -78,7 +78,7 @@ const AddRecipeForm = () => {
             id="ingredients"
             name="ingredients"
             value={formData.ingredients}
-            onChange={handleChange}
+            onChange={handleChange} // Correct use of target.value
             className={`mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-green-300 ${
               errors.ingredients ? "border-red-500" : "border-gray-300"
             }`}
@@ -98,7 +98,7 @@ const AddRecipeForm = () => {
             id="steps"
             name="steps"
             value={formData.steps}
-            onChange={handleChange}
+            onChange={handleChange} // Correct use of target.value
             className={`mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-green-300 ${
               errors.steps ? "border-red-500" : "border-gray-300"
             }`}
